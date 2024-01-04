@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Requests第一血|3 | 禅墨云</title><meta name="description" content="Requests第一血|3写在前面你好，我是禅墨！          今天发现一个有趣的现象，在家人眼里，我玩电子就是一个修手机、电器的！ 然后去问了别人，他说他学的是农工，然后他妈妈就以为他以后毕业是开拖拉机的。 那么各位看官们，在你家长眼里，你所学的专业毕业后是 干什么的，我们评论区见！ 从这篇文章开始，才算真正意义上的和代码打交道了，写代码之前，首先就要选择一个编辑器，哪个好用呢，当然是Py"><meta name="keywords" content="Python,爬虫"><meta name="author" content="Chanmo Jia"><meta name="copyright" content="Chanmo Jia"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Requests第一血|3"><meta name="twitter:description" content="Requests第一血|3写在前面你好，我是禅墨！          今天发现一个有趣的现象，在家人眼里，我玩电子就是一个修手机、电器的！ 然后去问了别人，他说他学的是农工，然后他妈妈就以为他以后毕业是开拖拉机的。 那么各位看官们，在你家长眼里，你所学的专业毕业后是 干什么的，我们评论区见！ 从这篇文章开始，才算真正意义上的和代码打交道了，写代码之前，首先就要选择一个编辑器，哪个好用呢，当然是Py"><meta name="twitter:image" content="https://chanmoyun.gitee.io/images/10.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Requests第一血|3"><meta property="og:url" content="https://chanmoyun.gitee.io/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/"><meta property="og:site_name" content="禅墨云"><meta property="og:description" content="Requests第一血|3写在前面你好，我是禅墨！          今天发现一个有趣的现象，在家人眼里，我玩电子就是一个修手机、电器的！ 然后去问了别人，他说他学的是农工，然后他妈妈就以为他以后毕业是开拖拉机的。 那么各位看官们，在你家长眼里，你所学的专业毕业后是 干什么的，我们评论区见！ 从这篇文章开始，才算真正意义上的和代码打交道了，写代码之前，首先就要选择一个编辑器，哪个好用呢，当然是Py"><meta property="og:image" content="https://chanmoyun.gitee.io/images/10.jpg"><meta property="article:published_time" content="2021-01-26T16:00:00.000Z"><meta property="article:modified_time" content="2021-01-31T07:32:35.612Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = 'flase'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://chanmoyun.gitee.io/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/"><link rel="prev" title="简易网页采集器|4" href="https://chanmoyun.gitee.io/2021/01/28/Reptile-Learn/04.%E7%AE%80%E6%98%93%E7%BD%91%E9%A1%B5%E9%87%87%E9%9B%86/"><link rel="next" title="HTTP&amp;HTTPS协议|2" href="https://chanmoyun.gitee.io/2021/01/24/Reptile-Learn/02.HTTP&amp;HTTPS%E5%8D%8F%E8%AE%AE/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="禅墨云" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">35</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="https://chanmoyun.gitee.io/love/love.html"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Requests%E7%AC%AC%E4%B8%80%E8%A1%80-3"><span class="toc-number">1.</span> <span class="toc-text">Requests第一血|3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">网络请求模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requests%E6%A8%A1%E5%9D%97%E7%9A%84%E7%BC%96%E7%A0%81%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">Requests模块的编码顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%BC%96%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">实战编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E"><span class="toc-number">1.6.</span> <span class="toc-text">文件操作说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="toc-number">1.7.</span> <span class="toc-text">写在后面</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(/images/10.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">禅墨云</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="https://chanmoyun.gitee.io/love/love.html"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Requests第一血|3</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2021-01-27 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2021-01-27</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2021-01-31 15:32:35"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2021-01-31</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Python/">Python</a><i class="fa fa-angle-right post-meta__separator" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="Requests第一血-3"><a href="#Requests第一血-3" class="headerlink" title="Requests第一血|3"></a>Requests第一血|3</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>你好，我是<strong>禅墨</strong>！</p>
+
+    <div id="aplayer-YDQWTYhG" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="399354289" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#4997da" data-volume="0.6"
+    ></div>
+
+
+
+<p>今天发现一个有趣的现象，在家人眼里，我玩电子就是一个修手机、电器的！</p>
+<p>然后去问了别人，他说他学的是农工，然后他妈妈就以为他以后毕业是开拖拉机的。</p>
+<p>那么各位看官们，在你家长眼里，你所学的专业毕业后是 干什么的，我们评论区见！</p>
+<p>从这篇文章开始，才算真正意义上的和代码打交道了，写代码之前，首先就要选择一个编辑器，哪个好用呢，当然是Pycharm啊，这还用问吗，对不对！</p>
+<h2 id="网络请求模块"><a href="#网络请求模块" class="headerlink" title="网络请求模块"></a>网络请求模块</h2><ul>
+<li><strong>urllib模块</strong> :较为古老，多用于Python2.x中，使用较为繁琐，但功能基本满足爬虫，有助于深入理解requests模块</li>
+<li><strong>requests模块</strong>：Python中原生的一款基于网络请求的模块，功能非常强大，使用简单便捷，效率极高，作用于模拟浏览器发送请求。</li>
+</ul>
+<h2 id="Requests模块的编码顺序"><a href="#Requests模块的编码顺序" class="headerlink" title="Requests模块的编码顺序"></a>Requests模块的编码顺序</h2><ol>
+<li><strong>指定url</strong>，所请求页面所在的网址</li>
+<li><strong>发起请求</strong>，向服务器发送请求，得到一个响应对象</li>
+<li><strong>获取响应数据</strong>，数据包含请求页面的源码信息</li>
+<li><strong>持久化存储</strong>，将得到的数据存储到本地或数据库</li>
+</ol>
+<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>默认你已安装Python解释器，并且已经将其加入到环境当中</p>
+<p>如果安装的是Pycharm,直接在设置里面安装即可，或者打开CMD</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+<p>pip 速度缓慢怎么办呢，那就换国内镜像源(以清华为例)，一劳永逸解决</p>
+<p>首先打开CMD,输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://img-blog.csdnimg.cn/20210127184354507.png#pic_center" alt="在这里插入图片描述"></p>
+<p>看到上图所示结果，找到生成的pip.ini，打开它，我们会看到:</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://img-blog.csdnimg.cn/20210127184341163.png#pic_center" alt="在这里插入图片描述"></p>
+<p>大功告成，就可以丝滑得下载第三方库了</p>
+<h2 id="实战编码"><a href="#实战编码" class="headerlink" title="实战编码"></a>实战编码</h2><p><strong>需求</strong>：爬取百度首页数据并存储到本地</p>
+<p>程序及注释：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># --coding:utf-8 --</span></span><br><span class="line"><span class="comment"># 需求：爬取百度首页页面数据</span></span><br><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#step 1:指定url</span></span><br><span class="line">    url = <span class="string">&#x27;https://www.baidu.com/&#x27;</span></span><br><span class="line">    <span class="comment">#step 2:发起请求</span></span><br><span class="line">    <span class="comment">#get方法会返回一个响应对象</span></span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    <span class="comment">#step 3:获取响应数据.text 返回的是字符串形式的响应数据</span></span><br><span class="line">    page_text = response.text</span><br><span class="line">    <span class="built_in">print</span>(page_text)</span><br><span class="line">    <span class="comment">#step 4:持久化存储</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./baidu.html&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(page_text)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;爬取结束&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>结束后会看到此工程文件夹里生成了一个网页：baidu.html</p>
+<h2 id="文件操作说明"><a href="#文件操作说明" class="headerlink" title="文件操作说明"></a>文件操作说明</h2><blockquote>
+<p>open(path, ‘-模式-‘,encoding&#x3D;’UTF-8’)<br>即open(路径+文件名, 读写模式, 编码)</p>
+</blockquote>
+<p>读写模式：<br>r ：只读<br>r+ : 读写<br>w ： 新建（会对原有文件进行覆盖）<br>a ： 追加<br>b ： 二进制文件</p>
+<p>常用的模式有：<br>“a” 以“追加”模式打开， (从 EOF 开始, 必要时创建新文件)<br>“a+” 以”读写”模式打开<br>“ab” 以”二进制 追加”模式打开<br>“ab+” 以”二进制 读写”模式打开</p>
+<p>“w” 以”写”的方式打开<br>“w+” 以“读写”模式打开<br>“wb” 以“二进制 写”模式打开<br>“wb+” 以“二进制 读写”模式打开</p>
+<p>“r+” 以”读写”模式打开<br>“rb” 以”二进制 读”模式打开<br>“rb+” 以”二进制 读写”模式打开</p>
+<p>rU 或 Ua 以”读”方式打开, 同时提供通用换行符支持 (PEP 278)</p>
+<p>需注意：<br>1、使用“w”模式。文件若存在，首先要清空，然后重新创建<br>2、使用“a”模式。把所有要写入文件的数据都追加到文件的末尾，即使你使用了seek（）指向文件的其他地方，如果文件不存在，将自动被创建。</p>
+<p>3、f.read([size]) ：size未指定则返回整个文件，如果文件大小&gt;2倍内存则有问题。f.read()读到文件尾时返回”“(空字串)<br>4、file.readline() 返回一行<br>5、file.readline([size]) 返回包含size行的列表,size 未指定则返回全部行<br>6、”for line in f: print line” #通过迭代器访问<br>7、f.write(“hello\n”) #如果要写入字符串以外的数据,先将他转换为字符串.<br>8、f.tell() 返回一个整数,表示当前文件指针的位置(就是到文件头的比特数).<br>9、f.seek(偏移量,[起始位置]) ： 用来移动文件指针<br>偏移量 : 单位“比特”,可正可负<br>起始位置 : 0 -文件头, 默认值; 1 -当前位置; 2 -文件尾<br>10、f.close() 关闭文件</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>OK！这就是本篇文章的内容了，欢迎关注<strong>禅墨云</strong>！</p>
+<p>博客网站同步更新，网址：chanmoyun.gitee.io</p>
+<blockquote>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://img-blog.csdnimg.cn/20210127184252320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDkwNzcw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+</blockquote>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Chanmo Jia</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chanmoyun.gitee.io/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/">https://chanmoyun.gitee.io/2021/01/27/Reptile-Learn/03.Requests%E7%AC%AC%E4%B8%80%E8%A1%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chanmoyun.gitee.io" target="_blank">禅墨云</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></div><div class="post_share"><div class="social-share" data-image="/images/lingko1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/01/28/Reptile-Learn/04.%E7%AE%80%E6%98%93%E7%BD%91%E9%A1%B5%E9%87%87%E9%9B%86/"><img class="prev_cover" data-src="/images/11.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">简易网页采集器|4</div></div></a></div><div class="next-post pull_right"><a href="/2021/01/24/Reptile-Learn/02.HTTP&amp;HTTPS%E5%8D%8F%E8%AE%AE/"><img class="next_cover" data-src="/images/9.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HTTP&amp;HTTPS协议|2</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2021/01/23/Reptile-Learn/01.初探爬虫/" title="初探爬虫|1"><img class="relatedPosts_cover" data-src="/images/8.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-23</div><div class="relatedPosts_title">初探爬虫|1</div></div></a></div><div class="relatedPosts_item"><a href="/2021/01/24/Reptile-Learn/02.HTTP&HTTPS协议/" title="HTTP&HTTPS协议|2"><img class="relatedPosts_cover" data-src="/images/9.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-24</div><div class="relatedPosts_title">HTTP&HTTPS协议|2</div></div></a></div><div class="relatedPosts_item"><a href="/2021/01/29/Reptile-Learn/05.破解百度翻译/" title="破解百度翻译|5"><img class="relatedPosts_cover" data-src="/images/12.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-29</div><div class="relatedPosts_title">破解百度翻译|5</div></div></a></div><div class="relatedPosts_item"><a href="/2021/01/31/Reptile-Learn/06.Requests PK 豆瓣&肯德基/" title="Requests PK 豆瓣&肯德基|6"><img class="relatedPosts_cover" data-src="/images/13.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-31</div><div class="relatedPosts_title">Requests PK 豆瓣&肯德基|6</div></div></a></div><div class="relatedPosts_item"><a href="/2021/01/28/Reptile-Learn/04.简易网页采集/" title="简易网页采集器|4"><img class="relatedPosts_cover" data-src="/images/11.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-28</div><div class="relatedPosts_title">简易网页采集器|4</div></div></a></div><div class="relatedPosts_item"><a href="/2020/07/24/Opencv-pro/人脸识别-PCA特征脸(大BOSS)/" title="人脸识别-PCA特征脸(大BOSS)"><img class="relatedPosts_cover" data-src="/images/4.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-07-24</div><div class="relatedPosts_title">人脸识别-PCA特征脸(大BOSS)</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'FwfsyrfdTxJO7ORo4bCfD74W-gzGzoHsz',
+  appKey: 'LJ8IzuXNUmXD0SDxiCtBhnBQ',
+  notify: false,
+  verify: false,
+  placeholder: 'Please leave your footprints',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Chanmo Jia</div><div class="icp"><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn/state/outPortal/loginPortal.action"><img class="icp-icon" src="/img/icp.png"/><span>浙ICP备20005765号-1</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/third-party/click_heart.js"></script><script>if (document.getElementsByClassName('mermaid').length) {
+  loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',function () {
+    mermaid.initialize({
+      theme: 'default',
+  })
+})
+}</script></body></html>
