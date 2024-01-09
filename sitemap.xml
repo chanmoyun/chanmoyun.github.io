@@ -367,13 +367,6 @@
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/tags/%E6%88%90%E9%95%BF%E8%BF%9B%E9%98%B6/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanmoyun.gitee.io/tags/Python/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -389,6 +382,13 @@
   
   <url>
     <loc>https://chanmoyun.gitee.io/tags/%E5%AE%9E%E6%88%98/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanmoyun.gitee.io/tags/%E6%88%90%E9%95%BF%E8%BF%9B%E9%98%B6/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -460,13 +460,6 @@
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/categories/%E6%88%90%E9%95%BF%E8%BF%9B%E9%98%B6/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanmoyun.gitee.io/categories/Python/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -481,7 +474,21 @@
   </url>
   
   <url>
+    <loc>https://chanmoyun.gitee.io/categories/%E6%88%90%E9%95%BF%E8%BF%9B%E9%98%B6/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://chanmoyun.gitee.io/categories/hexo/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanmoyun.gitee.io/categories/Python/OpenCv/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -496,13 +503,6 @@
   
   <url>
     <loc>https://chanmoyun.gitee.io/categories/Python/Python%E8%BF%9B%E9%98%B6/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanmoyun.gitee.io/categories/Python/OpenCv/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
