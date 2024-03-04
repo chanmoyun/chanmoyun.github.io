@@ -470,14 +470,14 @@
 
   
   <url>
-    <loc>https://chanmoyun.gitee.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://chanmoyun.gitee.io/tags/C/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/tags/C/</loc>
+    <loc>https://chanmoyun.gitee.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -540,6 +540,13 @@
   </url>
   
   <url>
+    <loc>https://chanmoyun.gitee.io/tags/Python%E8%BF%9B%E9%98%B6/</loc>
+    <lastmod>2024-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://chanmoyun.gitee.io/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -548,13 +555,6 @@
   
   <url>
     <loc>https://chanmoyun.gitee.io/tags/MatLab/</loc>
-    <lastmod>2024-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanmoyun.gitee.io/tags/Python%E8%BF%9B%E9%98%B6/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -605,14 +605,14 @@
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/categories/Hexo/</loc>
+    <loc>https://chanmoyun.gitee.io/categories/Python/OpenCv/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/categories/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/</loc>
+    <loc>https://chanmoyun.gitee.io/categories/Hexo/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -626,7 +626,7 @@
   </url>
   
   <url>
-    <loc>https://chanmoyun.gitee.io/categories/Python/OpenCv/</loc>
+    <loc>https://chanmoyun.gitee.io/categories/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/</loc>
     <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
